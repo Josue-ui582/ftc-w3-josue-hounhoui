@@ -1,22 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --font-nunito-sans: 'Nunito Sans', sans-serif;
-  --dark-blue: "#003459";
-  --mon-yellow: "#f7dba7";
-  --pink-red: "#ff564f";
-  --gree-light: "#34c759";
-  --orange-shine: "#ff912c";
-  --blue-sea: "#00a7e7";
-  --neutral-color-100: "#00171f";
-  --neutral-color-80: "#242b33";
-  --neutral-color-60: "#667479";
-  --neutral-color-40: "#99a2a5";
-  --neutral-color-20: "#ccd1d2";
-  --neutral-color-10: "#ebeeef";
-  --neutral-color-0: "#fdfdfd";
-}
-
 body {
   font-family: var(--font-nunito-sans);
 }
