@@ -47,7 +47,7 @@ export function Input({ className, error, clearable, ...props }: InputProps & { 
     <div className="relative flex flex-col space-y-1">
       <input
         className={cn(
-          "rounded-xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400",
+          "rounded-full bg-white border pl-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400",
           error ? "border-red-500" : "border-gray-300",
           className
         )}
