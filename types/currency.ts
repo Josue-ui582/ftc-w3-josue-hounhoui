@@ -4,3 +4,9 @@ export type Currency = {
   label: string;
   flag: string;
 };
+
+export type CurrencyContextType = {
+  selected: Currency;
+  setSelected: (currency: Currency) => void;
+  rates: Record<string, number>;
+};

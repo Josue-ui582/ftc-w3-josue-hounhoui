@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Nunito_Sans } from "next/font/google";
+import { CurrencyProvider } from "@/components/layout/navbar/currencyContext";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en" className={nunitoSans.variable}>
       <body
       >
-        {children}
+        <CurrencyProvider>
+          {children}
+        </CurrencyProvider>
       </body>
     </html>
   );

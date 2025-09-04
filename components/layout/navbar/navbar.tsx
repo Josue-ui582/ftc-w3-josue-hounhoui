@@ -42,7 +42,7 @@ export default function Navbar () {
                         <CiSearch className="absolute top-3 bottom-2 left-2 text-lg" />
                     </div>
                     <div>
-                        <Button>
+                        <Button variant="darckblue" size="md">
                             Join the community
                         </Button>
                     </div>
