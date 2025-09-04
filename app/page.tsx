@@ -2,6 +2,7 @@ import Header from "@/components/layout/header/header";
 import HeroSection from "@/components/layout/hero-section/heroSection";
 import Navbar from "@/components/layout/navbar/navbar";
 import PetList from "@/components/layout/pets/petList";
+import Section from "@/components/layout/section/section";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         </div>
       </HeroSection>
       <PetList />
+      <Section />
     </>
   );
 }
