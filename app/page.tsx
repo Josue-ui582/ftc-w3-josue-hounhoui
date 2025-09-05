@@ -7,6 +7,7 @@ import ProductList from "@/components/layout/products/productList";
 import Sponsor from "@/components/layout/sponsor/sponsor";
 import Adoption from "@/components/layout/adoption/adoption";
 import FaqList from "@/components/layout/faq/faqList";
+import Footer from "@/components/layout/footer/footer";
 
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
       <Sponsor />
       <Adoption />
       <FaqList />
+      <Footer />
     </>
   );
 }
