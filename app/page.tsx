@@ -3,7 +3,8 @@ import HeroSection from "@/components/layout/hero-section/heroSection";
 import Navbar from "@/components/layout/navbar/navbar";
 import PetList from "@/components/layout/pets/petList";
 import Section from "@/components/layout/section/section";
-import ProductList from "@/components/products/productList";
+import ProductList from "@/components/layout/products/productList";
+import Sponsor from "@/components/layout/sponsor/sponsor";
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <PetList />
       <Section />
       <ProductList />
+      <Sponsor />
     </>
   );
 }

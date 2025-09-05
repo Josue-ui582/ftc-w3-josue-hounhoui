@@ -1,7 +1,8 @@
 import React from "react";
 import { products } from "@/data/products";
 import ProductCard from "./productCard";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
+import { IoPlayCircleOutline } from "react-icons/io5";
 
 /**
  * ProductList Component
@@ -51,7 +52,7 @@ export default function ProductList() {
             <h2 className="text-lg text-[#003459] font-bold">Our Products</h2>
           </div>
           <div>
-            <Button>View more</Button>
+            <Button>View more <IoPlayCircleOutline /></Button>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

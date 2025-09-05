@@ -3,6 +3,7 @@
 import { pets } from "@/data/pets";
 import PetCard from "./petCard";
 import { Button } from "@/components/ui/button";
+import { IoPlayCircleOutline } from "react-icons/io5";
 
 export default function PetList() {
   return (
@@ -14,7 +15,7 @@ export default function PetList() {
             <h2 className="text-xl text-[#003459] font-bold">Tacke a look at some pets</h2>
           </div>
           <div>
-            <Button>View more</Button>
+            <Button>View more <IoPlayCircleOutline /></Button>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
