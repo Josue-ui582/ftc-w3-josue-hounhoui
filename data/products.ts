@@ -11,6 +11,8 @@ import { Product } from "@/types/product";
  * - `image` : URL ou chemin relatif vers l'image du produit.
  * - `title` : Nom ou titre du produit affiché dans l'UI.
  * - `type`  : Catégorie ou type du produit (ex : "Pour chien", "Pour chat").
+ * - `trash` : Ajouter un produit au panier.
+ * - `detail`: Les détails sur le produit à ajouter au panier
  * - `size`  : Taille ou capacité du produit (par ex. poids en grammes, volume en ml).
  * - `price` : Prix du produit en devise locale (par ex. en FCFA ou €).
  *
@@ -35,6 +37,8 @@ export const products: Product[] = [
     title: "Reflex Plus Adult Cat Food Salmon",
     type: "Dog Food",
     size: "885mg",
+    trash: "/Frame.png",
+    detail: "Free Toy & Free Shaker",
     price: 140000,
     isSize: true
   },
@@ -44,6 +48,8 @@ export const products: Product[] = [
     title: "Reflex Plus Adult Cat Food Salmon",
     type: "Cat Food",
     size: "1.5kg",
+    trash: "/Frame.png",
+    detail: "Free Toy & Free Shaker",
     price: 165000,
     isSize: true
   },
@@ -53,6 +59,8 @@ export const products: Product[] = [
     title: "Cat scratching ball toy kitten sisall rope ball",
     type: "Toy",
     size: "",
+    trash: "/Frame.png",
+    detail: "Free Cat Food",
     price: 1100000,
     isSize: false
   },
@@ -62,6 +70,8 @@ export const products: Product[] = [
     title: "Cute Pet Cat Warm Nest",
     type: "Toy",
     size: "",
+    trash: "/Frame.png",
+    detail: "Free Cat Food",
     price: 410000,
     isSize: false
   },
@@ -71,6 +81,8 @@ export const products: Product[] = [
     title: "NaturVet Dogs-Omega-Gold Plus Salmon Oil",
     type: "Dog Food",
     size: "385gm",
+    trash: "/Frame.png",
+    detail: "Free Toy & Free Shaker",
     price: 350000,
     isSize: true
   },
@@ -80,6 +92,8 @@ export const products: Product[] = [
     title: "Customes Fashion Pet Clother Cowboy Rider",
     type: "Costume",
     size: "1.5kg",
+    trash: "/Frame.png",
+    detail: "Free Toy & Free Shaker",
     price: 500000,
     isSize: true
   },
@@ -89,6 +103,8 @@ export const products: Product[] = [
     title: "Costumes Kichen Drumsti ck Headband",
     type: "Costume",
     size: "",
+    trash: "/Frame.png",
+    detail: "Free Cat Food",
     price: 400000,
     isSize: false
   },
@@ -98,6 +114,8 @@ export const products: Product[] = [
     title: "Plush Pet Toy",
     type: "Toy",
     size: "",
+    trash: "/Frame.png",
+    detail: "Free Toy & Free Shaker",
     price: 250000,
     isSize: false
   },

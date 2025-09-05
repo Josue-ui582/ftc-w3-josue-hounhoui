@@ -56,13 +56,20 @@ export default function ProductCard({ product }: { product: Product }) {
         height={300}
         className="w-full h-48 object-cover rounded-lg"
       />
-      <div className="p-4">
+      <div className="p-4 flex flex-coll gap-3">
         <h3 className="font-bold">{product.title}</h3>
         <p className="text-sm text-gray-600">
           Product : {product.type}{" "}
           {product.isSize ? `- Size : ${product.size}` : ""}
         </p>
         <p className="font-bold mt-2">{product.price.toLocaleString()}</p>
+        <div className="bg-[#f7dba7] p-2 rounded flex justify-center items-center">
+          <Image 
+            src={product.trash}
+            alt="Trash"
+          />
+          <p className="text-black text-bold"> - {product.detail}</p>
+        </div>
       </div>
     </div>
   );
