@@ -6,6 +6,7 @@ import Section from "@/components/layout/section/section";
 import ProductList from "@/components/layout/products/productList";
 import Sponsor from "@/components/layout/sponsor/sponsor";
 import Adoption from "@/components/layout/adoption/adoption";
+import FaqList from "@/components/layout/faq/faqList";
 
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
       <ProductList />
       <Sponsor />
       <Adoption />
+      <FaqList />
     </>
   );
 }

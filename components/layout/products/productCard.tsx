@@ -45,10 +45,6 @@ import Image from "next/image";
  *   return <ProductCard product={sampleProduct} />;
  * }
  * ```
- *
- * ⚠️ Remarques :
- * - Le prix est formaté avec `toLocaleString()` pour une meilleure lisibilité.
- * - L'affichage de la taille dépend de la valeur du champ `isSize`.
  */
 export default function ProductCard({ product }: { product: Product }) {
   return (
