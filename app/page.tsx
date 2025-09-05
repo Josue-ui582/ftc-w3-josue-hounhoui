@@ -5,6 +5,7 @@ import PetList from "@/components/layout/pets/petList";
 import Section from "@/components/layout/section/section";
 import ProductList from "@/components/layout/products/productList";
 import Sponsor from "@/components/layout/sponsor/sponsor";
+import Adoption from "@/components/layout/adoption/adoption";
 
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       <Section />
       <ProductList />
       <Sponsor />
+      <Adoption />
     </>
   );
 }
