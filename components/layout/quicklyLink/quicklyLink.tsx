@@ -44,7 +44,7 @@ export default function QuicklyLink () {
                         <Link href="/">Home</Link>
                     </li>
                     <li>
-                        <Link href="/">Category</Link>
+                        <Link href="/category">Category</Link>
                     </li>
                     <li>
                         <Link href="/">About</Link>

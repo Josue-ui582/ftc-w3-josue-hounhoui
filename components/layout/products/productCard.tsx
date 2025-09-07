@@ -33,10 +33,12 @@ import Image from "next/image";
  *
  * const sampleProduct: Product = {
  *   id: 1,
- *   image: "/images/dog-food.png",
+ *   image: "/dog-food.png",
  *   title: "Dog Food Premium",
  *   type: "Food",
  *   size: 500,
+ *  trash: "/tash.png"
+ *  detail: ""
  *   price: 15000,
  *   isSize: true,
  * };
@@ -56,17 +58,19 @@ export default function ProductCard({ product }: { product: Product }) {
         height={300}
         className="w-full h-48 object-cover rounded-lg"
       />
-      <div className="p-4 flex flex-coll gap-3">
+      <div className="p-4 flex flex-col gap-3">
         <h3 className="font-bold">{product.title}</h3>
         <p className="text-sm text-gray-600">
           Product : {product.type}{" "}
           {product.isSize ? `- Size : ${product.size}` : ""}
         </p>
         <p className="font-bold mt-2">{product.price.toLocaleString()}</p>
-        <div className="bg-[#f7dba7] p-2 rounded flex justify-center items-center">
+        <div className="bg-[#f7dba7] p-2 rounded flex justify-center items-center gap-2">
           <Image 
             src={product.trash}
             alt="Trash"
+            width={20}
+            height={20}
           />
           <p className="text-black text-bold"> - {product.detail}</p>
         </div>
