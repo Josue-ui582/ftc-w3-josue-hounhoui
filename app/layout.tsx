@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Nunito_Sans } from "next/font/google";
-import { CurrencyProvider } from "@/components/layout/navbar/currencyContext";
+import { CurrencyProvider } from "@/components/shared/navbar/currencyContext";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],

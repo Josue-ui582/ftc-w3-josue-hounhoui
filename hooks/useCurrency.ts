@@ -1,6 +1,6 @@
 "use client";
 import { useContext } from "react";
-import { CurrencyContext } from "@/components/layout/navbar/currencyContext";
+import { CurrencyContext } from "@/components/shared/navbar/currencyContext";
 
 /**
  * useCurrency Hook

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import "../globals.css";
-import { Nunito_Sans } from "next/font/google";
 import { CurrencyProvider } from "@/components/shared/navbar/currencyContext";
+import { Nunito_Sans } from "next/font/google";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -10,23 +9,22 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Category",
-  description: "Monito Pets, category page",
+  title: "Pet Detail",
+  description: "Monito Pets, pet detail page",
 };
 
-export default function RootLayout({
+export default function PetDetailLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={nunitoSans.variable}>
-      <body
-      >
-        <CurrencyProvider>
-          {children}
-        </CurrencyProvider>
-      </body>
+        <body>
+            <CurrencyProvider>
+              {children}
+            </CurrencyProvider>
+          </body>
     </html>
   );
 }

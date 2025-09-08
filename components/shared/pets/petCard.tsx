@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCurrency } from "@/hooks/useCurrency";
 import { Pet } from "@/types/pet";
+import Link from "next/link";
 
 /**
  * PetCard
@@ -38,23 +39,25 @@ export default function PetCard({ pet }: { pet: Pet }) {
   });
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden mt-10 p-2">
-      <Image
-        src={pet.image}
-        alt={pet.name}
-        width={400}
-        height={300}
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <div className="p-4">
-        <h3 className="font-bold">
-          {pet.name}
-        </h3>
-        <p className="text-sm text-gray-600">
-          Gender: {pet.gender} • Age: {pet.age}
-        </p>
-        <p className="font-bold mt-2">{convertedPrice}</p>
+    <Link href={`/pet/${pet.id}`}>
+      <div className="bg-white rounded-lg shadow-md overflow-hidden mt-10 p-2">
+        <Image
+          src={pet.image}
+          alt={pet.name}
+          width={400}
+          height={300}
+          className="w-full h-48 object-cover rounded-lg"
+        />
+        <div className="p-4">
+          <h3 className="font-bold">
+            {pet.name}
+          </h3>
+          <p className="text-sm text-gray-600">
+            Gender: {pet.gender} • Age: {pet.age}
+          </p>
+          <p className="font-bold mt-2">{convertedPrice}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

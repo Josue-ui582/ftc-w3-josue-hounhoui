@@ -1,13 +1,13 @@
 import Header from "@/components/layout/header/header";
 import HeroSection from "@/components/layout/hero-section/heroSection";
-import Navbar from "@/components/layout/navbar/navbar";
-import PetList from "@/components/layout/pets/petList";
+import Navbar from "@/components/shared/navbar/navbar";
+import PetList from "@/components/shared/pets/petList";
 import Section from "@/components/layout/section/section";
 import ProductList from "@/components/layout/products/productList";
 import Sponsor from "@/components/layout/sponsor/sponsor";
 import Adoption from "@/components/layout/adoption/adoption";
 import FaqList from "@/components/layout/faq/faqList";
-import Footer from "@/components/layout/footer/footer";
+import Footer from "@/components/shared/footer/footer";
 
 
 export default function Home() {
