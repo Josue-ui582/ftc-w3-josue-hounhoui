@@ -1,4 +1,4 @@
-import { Category } from "@/types/category";
+import { CategoryItem } from "@/types/category";
 
 /**
  * Liste de chat disponibles dans l'application.
@@ -31,7 +31,7 @@ import { Category } from "@/types/category";
  * venant d'une API ou d'une base de données.
  */
 
-export const categorys: Category[] = [
+export const categorys: CategoryItem[] = [
   { id: "1", 
     name: "CA001 - British Shorthair Blue", 
     breed: "small", 

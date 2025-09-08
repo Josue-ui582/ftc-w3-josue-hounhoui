@@ -4,25 +4,27 @@ import { FiltersProps } from "@/types/filter";
 /**
  * @component Filter
  * @description 
- * Composant permettant de filtrer une liste de catégories par **genre** et **couleur**.
+ * Composant permettant de filtrer une liste de catégories par **genre** , **couleur** et **race**.
  * Il affiche des cases à cocher (checkbox) pour chaque option disponible.
  *
  * @props {FiltersProps} props
  * @prop {Object} props.filters - Contient les filtres actuellement appliqués.
  * @prop {string[]} props.filters.genre - Liste des genres sélectionnés (Male/Female).
  * @prop {string[]} props.filters.couleur - Liste des couleurs sélectionnées.
+ * @prop {string[]} props.filters.race - Liste des races sélectionnées
  * @prop {(key: string, value: string) => void} props.onChange - Callback déclenché
- *        à chaque modification d’un filtre (genre ou couleur).
+ *        à chaque modification d’un filtre (genre , couleur , race).
  *
  * @example
  * <Filter
- *   filters={{ genre: ["Male"], couleur: ["Gray"] }}
+ *   filters={{ genre: ["Male"], couleur: ["Gray"], race: ["large"] }}
  *   onChange={(key, value) => console.log(key, value)}
  * />
  */
 export default function Filter({ filters, onChange }: FiltersProps) {
   const gender = ["Male", "Female"];
   const color = ["Gray", "Chocolate", "Yellow", "White", "WhiteGray", "BlackWhite"];
+  const breed = ["large", "medium", "small"];
 
   return (
     <div className="flex flex-col gap-4">
@@ -58,6 +60,21 @@ export default function Filter({ filters, onChange }: FiltersProps) {
               style={{ backgroundColor: mapColor(c) }}
             ></div>
             <span className="text-[14px] font-semibold">{c}</span>
+          </label>
+        ))}
+      </div>
+
+      {/* Section race */}
+      <div className="flex flex-col items-start justify-start gap-2">
+        <h3 className="text-lg font-bold">Breed</h3>
+        {breed.map((b) => (
+          <label key={b} className="flex justify-center items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={filters.race.includes(b)}
+              onChange={() => onChange("race", b)}
+            />
+            <span className="text-[14px] font-semibold">{b}</span>
           </label>
         ))}
       </div>

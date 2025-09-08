@@ -23,6 +23,7 @@ import CategoryListe from "./categoryList";
  * - filters : objet contenant deux tableaux
  *   - genre : liste des genres sélectionnés (ex. ["Male", "Female"]).
  *   - couleur : liste des couleurs sélectionnées (ex. ["Gray", "White"]).
+ *   - race : liste des races sélectionnées (ex. ["large", "medium"])
  *
  * @dependencies
  * - Filter : composant pour l’affichage et la gestion des filtres.
@@ -31,12 +32,15 @@ import CategoryListe from "./categoryList";
  * - categorys : données simulées (mock) provenant de `@/data/category`.
  */
 export default function CategoryMain() {
+  // on déclanche un état pour stocker les valeurs à filtrer
   const [filters, setFilters] = useState({
     genre: [] as string[],
     couleur: [] as string[],
+    race : [] as string[]
   });
 
-  const filterChange = (filterType: "genre" | "couleur", value: string) => {
+  // ici on déclare une fonction pour mettre à jour les filtres et faire plusieurs filtres à la fois
+  const filterChange = (filterType: "genre" | "couleur" | "race", value: string) => {
     setFilters((prev) => {
       const alreadyChecked = prev[filterType].includes(value);
       return {
@@ -48,12 +52,15 @@ export default function CategoryMain() {
     });
   };
 
+  // ici on déclare une fonction pour gérer l'afficharge des categories filtrées, par défaut rien n'est coché donc aucune filtre n'est appliquée
   const filterCategorys = categorys.filter((category) => {
     const genreMatch =
       filters.genre.length === 0 || filters.genre.includes(category.gender);
     const couleurMatch =
       filters.couleur.length === 0 || filters.couleur.includes(category.color);
-    return genreMatch && couleurMatch;
+    const raceMatch =
+      filters.race.length === 0 || filters.race.includes(category.breed);
+    return genreMatch && couleurMatch && raceMatch;
   });
 
   return (
