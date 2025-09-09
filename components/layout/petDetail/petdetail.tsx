@@ -1,6 +1,7 @@
 "use client";
 
 import PetCarousel from "./PetCarousel";
+import PetInfo from "./petInfo";
 import PetThumbnails from "./PetThumbnails";
 import { PetDetailProps } from "@/types/petDetail";
 
@@ -8,16 +9,13 @@ export default function PetDetail({ pet }: PetDetailProps) {
   return (
     <div className="flex justify-center">
 
-      <div className="p-3 bg-gray-50 rounded-xl shadow-md">
-        <div>
+      <div className="p-3 flex gap-4">
+        <div className="w-1/4">
             <PetCarousel pet={pet} />
             <PetThumbnails />
         </div>
-        <div className="mt-6">
-            <h1 className="text-2xl font-bold mb-2">{pet.name}</h1>
-            <p className="text-xl text-red-500 font-semibold mb-4">
-            {pet.price.toLocaleString()} VND
-            </p>
+        <div className="mt-6 w-3/4">
+            <PetInfo pet={pet} />
         </div>
       </div>
     </div>

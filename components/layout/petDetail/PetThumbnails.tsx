@@ -8,7 +8,7 @@ export default function PetThumbnails() {
   return (
     <div className="mt-4">
       <Image.PreviewGroup>
-        <div className="flex gap-2 overflow-x-auto">
+        <div className="flex gap-2 overflow-x-scroll">
           {pets.map((p) => (
             <Link key={p.id} href={`/pet/${p.id}`}>
               <Image

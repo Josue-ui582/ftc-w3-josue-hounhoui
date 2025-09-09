@@ -1,6 +1,6 @@
 import CategoryHeader from "@/components/layout/category/category-header/categoryHeader";
 import CategoryMain from "@/components/layout/category/category-main/categoryMain";
-import Footer from "@/components/layout/footer/footer";
+import Footer from "@/components/shared/footer/footer";
 import Navbar from "@/components/shared/navbar/navbar";
 import React from "react";
 

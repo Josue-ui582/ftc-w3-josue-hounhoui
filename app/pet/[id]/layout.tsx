@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Monito Pets, pet detail page",
 };
 
-export default function PetDetailLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
