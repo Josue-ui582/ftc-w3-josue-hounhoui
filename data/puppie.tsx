@@ -1,0 +1,48 @@
+import { MorePuppie } from "@/types/morepuppie"
+
+export const puppies : MorePuppie [] = [
+    {
+        id: "1",
+        name: "MO234 - Pomeranian White",
+        breed: "Pomeranian",
+        gender: "Male",
+        age: "02 months",
+        size: "Small",
+        color: "White",
+        price: 6900000,
+        image: "/puppie1.jpg",
+    },
+    {
+        id: "2",
+        name: "M0502 - Poodele Tiny Yellow",
+        breed: "Pomeranian",
+        gender: "Fameale",
+        age: "02 months",
+        size: "Small",
+        color: "White",
+        price: 3900000,
+        image: "/puppie2.jpg",
+    },
+    {
+        id: "3",
+        name: "MO102 - Poodele Tiny Sepia",
+        breed: "Pomeranian",
+        gender: "Male",
+        age: "02 months",
+        size: "Small",
+        color: "White",
+        price: 4000000,
+        image: "/puppie3.jpg",
+    },
+    {
+        id: "4",
+        name: "MO512 - Alaskan Malamute Grey",
+        breed: "Pomeranian",
+        gender: "Male",
+        age: "02 months",
+        size: "Small",
+        color: "White",
+        price: 8900000,
+        image: "/puppie4.jpg",
+    },
+]

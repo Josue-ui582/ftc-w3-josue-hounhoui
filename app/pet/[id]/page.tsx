@@ -7,6 +7,7 @@ import { notFound, useParams } from "next/navigation";
 import Navbar from "@/components/shared/navbar/navbar";
 import Footer from "@/components/shared/footer/footer";
 import CustomerList from "@/components/layout/costumer/customerListe";
+import MorePuppiesListe from "@/components/layout/morePuppies/morePuppiesListe";
 
 export default function Detail () {
     const {id} = useParams();
@@ -18,6 +19,7 @@ export default function Detail () {
             <Navbar />
             <PetDetail pet={pet} />
             <CustomerList />
+            <MorePuppiesListe />
             <Footer />
         </>
     )
