@@ -20,13 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunitoSans.variable}>
-      <body
-      >
-        <CurrencyProvider>
-          {children}
-        </CurrencyProvider>
-      </body>
-    </html>
+    <CurrencyProvider>
+      {children}
+    </CurrencyProvider>
   );
 }
