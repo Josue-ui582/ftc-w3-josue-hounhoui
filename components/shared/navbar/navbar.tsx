@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import logo from "../../../app/images/Frame.svg";
 import Link from "next/link";
@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { CiSearch } from "react-icons/ci";
 import CurrencySelector from "./currency";
 import { Button } from "@/components/ui/button";
+import { MdOutlineMenu } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 
 /**
  * @component Navbar
@@ -34,17 +36,23 @@ import { Button } from "@/components/ui/button";
  * - TailwindCSS : pour la mise en page et la responsivité.
  */
 export default function Navbar() {
+  // On fait appelle à l'état React pour gérer le menu
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleMenu = () => {
+    setOpenMenu(!openMenu);
+  }
+
   return (
-    <nav className="relative flex justify-center items-center h-20 px-14 z-40">
+    <nav className="relative flex-row justify-center items-center h-20 px-14 z-40 md:block hidden">
       <div className="flex justify-between items-center w-full">
-        {/* Logo + Menu */}
+        
         <div className="flex gap-8 justify-center items-center">
-          {/* Logo */}
+          
           <div>
             <Image src={logo} alt="Logo" />
           </div>
 
-          {/* Menu principal */}
           <div>
             <ul className="flex gap-6 text-[#003459] font-semibold">
               <li>
@@ -63,27 +71,74 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Recherche + CTA + Sélecteur */}
         <div className="flex justify-center items-center gap-4">
-          {/* Barre de recherche */}
+          
           <div className="relative">
             <Input type="text" placeholder="Search something here..." />
             <CiSearch className="absolute top-3 bottom-2 left-2 text-lg" />
           </div>
 
-          {/* Bouton CTA */}
           <div>
             <Button variant="darckblue" size="md">
               Join the community
             </Button>
           </div>
 
-          {/* Sélecteur devise */}
           <div>
             <CurrencySelector />
           </div>
         </div>
       </div>
+
+      {/* Afficharge mobile du menu */}
+      <div className="flex md:hidden justify-between">
+        <div onClick={handleMenu}>
+          {
+            openMenu ? <MdClose className="cursor-pointer" /> : <MdOutlineMenu className="cursor-pointer" />
+          }
+        </div>
+        <div>
+          <Image src={logo} alt="Logo" />
+        </div>
+        <div>
+          <CiSearch className="text-lg" />
+        </div>
+      </div>
+      {
+        openMenu &&
+        <div className="flex flex-col items-center justify-center gap-6 h-screen z-50 bg-gray-900 rounded-xl mt-10">
+          <div>
+            <ul className="flex flex-col gap-4 text-gray-300 font-semibold">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/category">Category</Link>
+              </li>
+              <li>
+                <Link href="/">About</Link>
+              </li>
+              <li>
+                <Link href="/">Contact</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col justify-center items-center gap-3">
+
+          <div>
+            <Button variant="white" size="md">
+              Join the community
+            </Button>
+          </div>
+
+          <div>
+            <CurrencySelector />
+          </div>
+        </div>
+
+        </div>
+      }
     </nav>
   );
 }
