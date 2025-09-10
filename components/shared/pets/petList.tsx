@@ -5,6 +5,14 @@ import PetCard from "./petCard";
 import { Button } from "@/components/ui/button";
 import { IoPlayCircleOutline } from "react-icons/io5";
 
+/**
+ * composant PetList
+ * @description
+ * Ce composant affiche la liste des pets disponible sur l'applicaction
+ * Le composant PetCard reçoit une prop
+ * @returns 
+ */
+
 export default function PetList() {
   return (
     <div className="flex justify-center items-center mt-20">
