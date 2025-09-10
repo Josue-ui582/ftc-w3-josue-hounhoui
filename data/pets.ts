@@ -1,5 +1,36 @@
 import { Pet } from "@/types/pet";
 
+/**
+ * Liste de pets disponibles dans l'application.
+ *
+ * Chaque élément du tableau représente un pet et respecte
+ * le type `Pet` définie dans `@/types/pet`.
+ *
+ * Champs :
+ * - `id`    : Identifiant unique du pet.
+ * - `image` : URL ou chemin relatif vers l'image du pet.
+ * - `title` : Nom ou titre du pet affiché dans l'UI.
+ * - `type`  : Catégorie ou type du pet (ex : "Pour chien", "Pour chat").
+ * - `trash` : Ajouter un pet au panier.
+ * - `detail`: Les détails sur le pet à ajouter au panier
+ * - `size`  : Taille ou capacité du pet (par ex. poids en grammes, volume en ml).
+ * - `price` : Prix du pet en devise locale (par ex. en FCFA ou €).
+ *
+ * Exemple d'utilisation :
+ * ```ts
+ * import { products } from "@/data/pets";
+ *
+ * // Récupérer le premier pet
+ * const firstProduct = products[0];
+ * console.log(firstProduct.title, firstProduct.price);
+ * ```
+ *
+ * ⚠️ Les données présentes ici sont statiques et servent
+ * généralement de **mock data** pour le développement ou les tests.
+ * En production, elles devront être remplacées par des données
+ * venant d'une API ou d'une base de données.
+ */
+
 export const pets: Pet[] = [
   {
     id: "1",
