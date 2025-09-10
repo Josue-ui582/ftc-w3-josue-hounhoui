@@ -37,7 +37,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
  */
 export default function QuicklyLink () {
     return(
-        <div className="flex justify-between items-center">
+        <div className="flex md:flex-row flex-col gap-4 justify-center md:justify-between items-center">
             <div>
                 <ul className="flex justify-center items-center gap-4 text-[14px]">
                     <li>

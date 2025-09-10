@@ -34,19 +34,19 @@ export default function Suscribe() {
   };
 
   return (
-    <div className="bg-[#003459] rounded-3xl flex flex-col md:flex-row justify-between items-center p-4 gap-4">
+    <div className="bg-[#003459] rounded-3xl flex flex-col md:flex-row md:justify-between justify-center items-center p-4 gap-4">
       <div className="text-white text-xl font-bold text-center md:text-left">
         <h2>Register now so you don't miss our programs</h2>
       </div>
 
-      <div className="flex items-center gap-2 p-2 rounded-xl bg-[#fff7e9]">
+      <div className="flex items-center md:w-1/2 gap-2 p-2 w-full rounded-xl bg-[#fff7e9]">
         {success ? (
           <p className="text-[#003459] font-bold text-lg p-4">
             ✅ Votre email est bien enregistré, vérifiez votre boîte email pour confirmer
           </p>
         ) : (
           <form 
-            className="flex justify-center items-center gap-2"
+            className="flex md:flex-row flex-col w-full justify-center items-center gap-2"
             onSubmit={handleSubscribe}
           >
             <input
@@ -54,11 +54,11 @@ export default function Suscribe() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border p-2 outline-none rounded-full"
+                className="border p-2 outline-none rounded-full w-full"
             />
 
             <button
-              className="bg-[#003459] text-white p-2 rounded-full cursor-pointer"
+              className="bg-[#003459] text-white p-2 rounded-full cursor-pointer w-full"
               type="submit"
               disabled={loading}
             >
