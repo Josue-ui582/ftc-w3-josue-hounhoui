@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../../app/images/Frame.svg";
 import Link from "next/link";
@@ -38,107 +38,104 @@ import { MdClose } from "react-icons/md";
 export default function Navbar() {
   // On fait appelle à l'état React pour gérer le menu
   const [openMenu, setOpenMenu] = useState(false);
+  // On fait appel à l'état React pour gérer l'affichage du input
+  const [showSearch, setShowSearch] = useState(false);
+  const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
   }
 
-  return (
-    <nav className="relative flex-row justify-center items-center h-20 px-14 z-40 md:block hidden">
-      <div className="flex justify-between items-center w-full">
-        
-        <div className="flex gap-8 justify-center items-center">
-          
-          <div>
-            <Image src={logo} alt="Logo" />
-          </div>
+  // Fermer si clic en dehors
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
+        setShowSearch(false);
+      }
+    }
 
-          <div>
-            <ul className="flex gap-6 text-[#003459] font-semibold">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/category">Category</Link>
-              </li>
-              <li>
-                <Link href="/">About</Link>
-              </li>
-              <li>
-                <Link href="/">Contact</Link>
-              </li>
-            </ul>
-          </div>
+    if (showSearch) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSearch]);
+
+  // Gérer la touche Entrée
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      console.log("Recherche envoyée :", query);
+      setShowSearch(false);
+    }
+  };
+
+  return (
+    <>
+      {/* Nav desktop */}
+      <nav className="relative hidden lg:flex justify-between items-center md:h-16 sm:h-14 h-12 lg:h-20 px-14 z-40">
+        <div className="flex gap-8 items-center">
+          <Image src={logo} alt="Logo" />
+          <ul className="flex gap-6 text-[#003459] font-semibold">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/category">Category</Link></li>
+            <li><Link href="/">About</Link></li>
+            <li><Link href="/">Contact</Link></li>
+          </ul>
         </div>
 
-        <div className="flex justify-center items-center gap-4">
-          
+        <div className="flex items-center gap-4">
           <div className="relative">
             <Input type="text" placeholder="Search something here..." />
-            <CiSearch className="absolute top-3 bottom-2 left-2 text-lg" />
+            <CiSearch className="absolute top-3 left-2 text-lg" />
           </div>
-
-          <div>
-            <Button variant="darckblue" size="md">
-              Join the community
-            </Button>
-          </div>
-
-          <div>
-            <CurrencySelector />
-          </div>
+          <Button variant="darckblue" size="md">Join the community</Button>
+          <CurrencySelector />
         </div>
-      </div>
+      </nav>
 
-      {/* Afficharge mobile du menu */}
-      <div className="flex md:hidden justify-between">
-        <div onClick={handleMenu}>
-          {
-            openMenu ? <MdClose className="cursor-pointer" /> : <MdOutlineMenu className="cursor-pointer" />
-          }
-        </div>
-        <div>
+      {/* Nav mobile */}
+      <nav className="flex lg:hidden flex-col h-20 px-6 z-40">
+        <div className="flex relative justify-between items-center">
+          <div onClick={handleMenu}>
+            {openMenu ? <MdClose className="cursor-pointer" /> : <MdOutlineMenu className="cursor-pointer" />}
+          </div>
           <Image src={logo} alt="Logo" />
+          <CiSearch 
+            className="text-lg cursor-pointer"
+            onClick={() => setShowSearch(!showSearch)}
+          />
+
+          {showSearch && (
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Search something ..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className="absolute top-0 right-6 w-40 px-2 py-1 text-sm rounded-md border border-gray-300 shadow-md bg-white focus:outline-none"
+              autoFocus
+            />
+          )}
         </div>
-        <div>
-          <CiSearch className="text-lg" />
-        </div>
-      </div>
-      {
-        openMenu &&
-        <div className="flex flex-col items-center justify-center gap-6 h-screen z-50 bg-gray-900 rounded-xl mt-10">
-          <div>
+
+        {openMenu && (
+          <div className="w-full flex flex-col items-center justify-between gap-6 h-screen z-50 bg-gray-900 rounded-xl py-6">
             <ul className="flex flex-col gap-4 text-gray-300 font-semibold">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/category">Category</Link>
-              </li>
-              <li>
-                <Link href="/">About</Link>
-              </li>
-              <li>
-                <Link href="/">Contact</Link>
-              </li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/category">Category</Link></li>
+              <li><Link href="/">About</Link></li>
+              <li><Link href="/">Contact</Link></li>
             </ul>
-          </div>
-
-          <div className="flex flex-col justify-center items-center gap-3">
-
-          <div>
-            <Button variant="white" size="md">
-              Join the community
-            </Button>
-          </div>
-
-          <div>
+            <Button variant="white" size="md">Join the community</Button>
             <CurrencySelector />
           </div>
-        </div>
-
-        </div>
-      }
-    </nav>
+        )}
+      </nav>
+    </>
   );
 }

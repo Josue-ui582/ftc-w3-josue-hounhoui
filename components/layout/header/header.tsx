@@ -27,26 +27,25 @@ import { IoPlayCircleOutline } from "react-icons/io5";
  */
 export default function Header() {
   return (
-    <header className="flex justify-center items-end relative z-40 h-[87vh]">
-      <div className="flex justify-between items-start w-[90%]">
-        {/* Texte principal */}
+    <header className="flex justify-center center">
+      <div className="flex lg:flex-row flex-col gap-24 md:gap-5 lg:gap-6 justify-between md:items-start md:w-[90%] w-[98%] items-end lg:items-center">
+
         <div className="flex flex-col gap-4">
-          <div className="text-[#003459]">
-            <h1 className="font-bold text-5xl">One more friend</h1>
-            <h4 className="font-bold text-3xl">Thousands more fun!</h4>
+          <div className="text-[#003459] relative">
+            <h1 className="font-bold md:text-5xl text-3xl relative z-10">One more friend</h1>
+            <h4 className="font-bold md:text-3xl text-xl">Thousands more fun!</h4>
+            <div className="md:w-[50px] md:h-[50px] w-[40px] h-[40px] bg-[#f7dba7] md:rounded-2xl rounded-lg absolute top-0 left-0 rotate-45 z-0"></div>
           </div>
 
-          {/* Description */}
           <div className="w-1/2">
-            <p className="text-[15px]">
+            <p className="text-[15px] text-start">
               Having a pet means you have more joy, a new friend, a happy person
               who will always be with you to have fun. We have 200+ different
               pets that can meet your needs!
             </p>
           </div>
 
-          {/* Boutons d'action */}
-          <div className="flex gap-4">
+          <div className="flex md:gap-4 gap-2">
             <Button>
               View Intro <IoPlayCircleOutline />
             </Button>
@@ -54,9 +53,15 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Image illustrative */}
-        <div>
-          <Image src={goodWoman} alt="Good humored woman" />
+        <div className="relative">
+          <div className="md:w-[400px] md:h-[400px] w-[300px] h-[300px] bg-[#003459] rounded-[5rem] absolute md:left-0 top-20 left-5 sm:top-24 md:top-16 rotate-12 z-0"></div>
+          <div className="md:w-[400px] md:h-[700px] w-[300px] h-[400px] bg-[#f7dba7] rounded-[5rem] absolute sm: md:left-0 left-14 top-16 rotate-35 z-0"></div>
+
+          <Image 
+            src={goodWoman} 
+            alt="Good humored woman"
+            className="relative z-10"
+          />
         </div>
       </div>
     </header>
