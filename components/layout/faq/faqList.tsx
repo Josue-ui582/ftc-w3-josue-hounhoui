@@ -47,17 +47,22 @@ export default function FaqList() {
             <h2 className="text-xl text-[#003459] font-bold">Useful Pet Knowledge</h2>
           </div>
           <div>
-            <Button>
-              View more <IoPlayCircleOutline />
-            </Button>
+            <Button className="md:px-4 md:py-2 md:text-base lg:px-6 lg:py-3 lg:text-lg px-2 py-1 hidden sm:block md:flex md:gap-2">View more <IoPlayCircleOutline /></Button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {faqs.map((faq) => (
             <FaqCard key={faq.id} faq={faq} />
           ))}
         </div>
+        <Button
+          variant="default"
+          size="sm"
+          className="md:px-4 md:py-2 md:text-base lg:px-6 lg:py-3 lg:text-lg px-2 py-1 sm:hidden w-full flex gap-2"
+        >
+          View more <IoPlayCircleOutline />
+        </Button>
       </div>
     </section>
   );

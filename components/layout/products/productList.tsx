@@ -45,14 +45,14 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 export default function ProductList() {
   return (
     <article className="flex justify-center items-center mt-10">
-      <div className="w-[90%]">
+      <div className="w-[90%] flex flex-col gap-5">
         <div className="flex justify-between items-center">
           <div>
             <h5 className="text-black">Hard to choose right products for your pets?</h5>
             <h2 className="text-lg text-[#003459] font-bold">Our Products</h2>
           </div>
           <div>
-            <Button>View more <IoPlayCircleOutline /></Button>
+            <Button className="md:px-4 md:py-2 md:text-base lg:px-6 lg:py-3 lg:text-lg px-2 py-1 hidden sm:block md:flex md:gap-2">View more <IoPlayCircleOutline /></Button>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -60,6 +60,13 @@ export default function ProductList() {
             <ProductCard product={product} key={product.id} />
           ))}
         </div>
+        <Button
+          variant="default"
+          size="sm"
+          className="md:px-4 md:py-2 md:text-base lg:px-6 lg:py-3 lg:text-lg px-2 py-1 sm:hidden w-full flex gap-2"
+        >
+          View more <IoPlayCircleOutline />
+        </Button>
       </div>
     </article>
   );
