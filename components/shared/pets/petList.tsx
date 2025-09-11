@@ -13,6 +13,7 @@ import { IoPlayCircleOutline } from "react-icons/io5";
  * @returns 
  */
 
+
 export default function PetList() {
   return (
     <div className="flex justify-center items-center mt-20">
@@ -23,10 +24,17 @@ export default function PetList() {
             <h2 className="text-xl text-[#003459] font-bold">Tacke a look at some pets</h2>
           </div>
           <div>
-            <Button>View more <IoPlayCircleOutline /></Button>
+            <Button
+              variant="default"
+              size="sm"
+              className="md:px-4 md:py-2 md:text-base lg:px-6 lg:py-3 lg:text-lg px-2 py-1"
+            >
+              View more <IoPlayCircleOutline />
+            </Button>
+
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {pets.map((pet) => (
             <PetCard key={pet.id} pet={pet} />
           ))}
