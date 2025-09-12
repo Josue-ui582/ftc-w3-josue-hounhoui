@@ -91,7 +91,7 @@ export default function CurrencySelector() {
                   height={20}
                   className="rounded-full object-cover"
                 />
-                <span>{currency.code}</span>
+                <span className="text-gray-800">{currency.code}</span>
               </li>
             ))}
           </ul>

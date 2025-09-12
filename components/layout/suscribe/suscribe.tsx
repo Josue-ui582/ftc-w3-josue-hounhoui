@@ -1,7 +1,6 @@
 "use client"
 
-import { Input } from "@/components/ui/input";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 /**
  * Suscribe Component
@@ -36,7 +35,7 @@ export default function Suscribe() {
   return (
     <div className="bg-[#003459] rounded-3xl flex flex-col md:flex-row md:justify-between justify-center items-center p-4 gap-4">
       <div className="text-white text-xl font-bold text-center md:text-left">
-        <h2>Register now so you don't miss our programs</h2>
+        <h2>Register now so you don&apos;t miss our programs</h2>
       </div>
 
       <div className="flex items-center md:w-1/2 gap-2 p-2 w-full rounded-xl bg-[#fff7e9]">
