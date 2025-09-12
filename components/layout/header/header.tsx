@@ -32,12 +32,12 @@ export default function Header() {
 
         <div className="flex flex-col gap-4">
           <div className="text-[#003459] relative">
-            <h1 className="font-bold md:text-5xl text-3xl relative z-10">One more friend</h1>
-            <h4 className="font-bold md:text-3xl text-xl">Thousands more fun!</h4>
+            <h1 className="font-bold md:text-5xl text-4xl relative z-10">One more friend</h1>
+            <h4 className="font-bold md:text-3xl text-2xl">Thousands more fun!</h4>
             <div className="md:w-[50px] md:h-[50px] w-[40px] h-[40px] bg-[#f7dba7] md:rounded-2xl rounded-lg absolute top-0 left-0 rotate-45 z-0"></div>
           </div>
 
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <p className="text-[15px] text-start">
               Having a pet means you have more joy, a new friend, a happy person
               who will always be with you to have fun. We have 200+ different

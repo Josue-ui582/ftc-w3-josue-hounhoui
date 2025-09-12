@@ -27,7 +27,7 @@ export default function Filter({ filters, onChange }: FiltersProps) {
   const breed = ["large", "medium", "small"];
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 bg-gray-50 p-4 rounded-lg">
       {/* Section Genre */}
       <div className="flex flex-col items-start justify-start gap-2">
         <h3 className="text-lg font-bold">Gender</h3>

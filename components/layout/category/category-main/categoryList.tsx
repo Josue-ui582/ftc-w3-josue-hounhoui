@@ -7,8 +7,9 @@ import { Pagination } from "antd";
 import type { PaginationProps } from "antd";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
-import { CategoryType } from "@/types/category";
+import { CategoryListeProps } from "@/types/category";
 import { FaFilter } from "react-icons/fa";
+import Filter from "../filter/filter";
 
 /**
  * @component CategoryListe
@@ -40,8 +41,21 @@ import { FaFilter } from "react-icons/fa";
  */
 const ITEMS_PER_PAGE = 9;
 
-export default function CategoryListe({ categorys }: CategoryType) {
+export default function CategoryListe({ categorys, filters, onFilterChange }: CategoryListeProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFilter, setShowFilter] = useState(false);
+
+  const handleDisplayFilter = () => {
+    setShowFilter((prev) => !prev);
+  };
+
+  const handleFilterChange = (filterType: "genre" | "couleur" | "race", value: string) => {
+    onFilterChange(filterType, value);
+    // Fermer seulement si on est en mobile
+    if (window.innerWidth < 640) {
+      setShowFilter(false);
+    }
+  };
 
   const totalItems = categorys.length;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -55,7 +69,7 @@ export default function CategoryListe({ categorys }: CategoryType) {
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 relative">
       <div className="sm:hidden flex justify-between">
         <div>
           <button className="p-3 rounded-full border text-gray-500 flex items-center justify-center">
@@ -64,9 +78,17 @@ export default function CategoryListe({ categorys }: CategoryType) {
         </div>
         <div className="flex gap-3 items-center justify-center">
           <p className="text-xl font-bold">Filter</p>
-          <FaFilter className="cursor-pointer" />
+          <FaFilter className="cursor-pointer" onClick={handleDisplayFilter} />
         </div>
       </div>
+
+      {/** Affichage du composant filter sur mobile */}
+      <div className="absolute top-0">
+        {showFilter &&
+          <Filter filters={filters} onChange={handleFilterChange} />
+        }
+      </div>
+
       <div className="flex items-center justify-between">
         <div className="flex gap-4">
           <p className="text-2xl text-[#003459] font-bold">Small Dog</p>

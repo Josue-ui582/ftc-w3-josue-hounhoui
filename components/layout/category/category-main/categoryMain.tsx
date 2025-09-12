@@ -70,7 +70,10 @@ export default function CategoryMain() {
           <Filter filters={filters} onChange={filterChange} />
         </aside>
         <section>
-          <CategoryListe categorys={filterCategorys} />
+          <CategoryListe 
+            categorys={filterCategorys}
+            filters={filters}
+            onFilterChange={filterChange} />
         </section>
       </div>
     </main>

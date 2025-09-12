@@ -1,4 +1,4 @@
-
+// types/category.ts
 export type CategoryItem = {
   id: string;
   name: string;
@@ -10,7 +10,20 @@ export type CategoryItem = {
   image: string;
 };
 
-// La liste complète
-export type CategoryType = {
+export type Filters = {
+  genre: string[];
+  couleur: string[];
+  race: string[];
+};
+
+export type FiltersProps = {
+  filters: Filters;
+  onChange: (filterType: "genre" | "couleur" | "race", value: string) => void;
+};
+
+export type CategoryListeProps = {
+  // IMPORTANT: ici c'est un tableau de CategoryItem
   categorys: CategoryItem[];
+  filters: Filters;
+  onFilterChange: (filterType: "genre" | "couleur" | "race", value: string) => void;
 };
