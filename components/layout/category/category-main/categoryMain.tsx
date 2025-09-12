@@ -66,7 +66,7 @@ export default function CategoryMain() {
   return (
     <main className="flex justify-center items-center mt-10">
       <div className="flex justify-between items-start w-[90%]">
-        <aside>
+        <aside className="lg:block hidden">
           <Filter filters={filters} onChange={filterChange} />
         </aside>
         <section>

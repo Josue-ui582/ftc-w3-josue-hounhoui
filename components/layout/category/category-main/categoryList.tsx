@@ -8,6 +8,7 @@ import type { PaginationProps } from "antd";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { CategoryType } from "@/types/category";
+import { FaFilter } from "react-icons/fa";
 
 /**
  * @component CategoryListe
@@ -55,12 +56,23 @@ export default function CategoryListe({ categorys }: CategoryType) {
 
   return (
     <div className="flex flex-col gap-3">
+      <div className="sm:hidden flex justify-between">
+        <div>
+          <button className="p-3 rounded-full border text-gray-500 flex items-center justify-center">
+            Sort by Popular : <BiChevronDown />
+          </button>
+        </div>
+        <div className="flex gap-3 items-center justify-center">
+          <p className="text-xl font-bold">Filter</p>
+          <FaFilter className="cursor-pointer" />
+        </div>
+      </div>
       <div className="flex items-center justify-between">
         <div className="flex gap-4">
           <p className="text-2xl text-[#003459] font-bold">Small Dog</p>
           <span className="text-gray-400 text-[15px]">{totalItems} pupples</span>
         </div>
-        <div>
+        <div className="hidden sm:block">
           <button className="p-3 rounded-full border text-gray-500 flex items-center justify-center">
             Sort by Popular : <BiChevronDown />
           </button>

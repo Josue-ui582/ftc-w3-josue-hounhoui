@@ -35,7 +35,7 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 export default function CategoryHeader() {
   return (
     <header className="flex justify-center items-center">
-      <div className="w-[90%]">
+      <div className="md:w-[90%] w-[98%]">
         {/* Fil d'Ariane */}
         <div>
           <ul className="flex gap-2 text-[14px]">
@@ -67,25 +67,25 @@ export default function CategoryHeader() {
         </div>
 
         {/* Bannière */}
-        <div className="bg-[#fff7e9] relative overflow-hidden flex justify-end items-end rounded-4xl w-full mt-10 pt-10">
+        <div className="bg-[#fff7e9] relative overflow-hidden flex justify-end items-end rounded-4xl w-full mt-10 pt-10 pl-2 pr-2">
           {/* Décor bleu */}
           <div className="bg-[#003459] h-[900px] w-[700px] absolute rounded-4xl z-10 transform rotate-60 right-0 -top-80"></div>
 
           {/* Contenu principal */}
-          <div className="flex justify-between items-end left-20 relative z-50">
+          <div className="flex flex-col-reverse justify-center items-center md:flex-row md:justify-between md:items-end md:left-20 relative z-40">
             {/* Image chien */}
             <div>
               <Image src={dogs} alt="dogs" className="relative z-50" />
             </div>
 
             {/* Texte + CTA */}
-            <div className="flex flex-col gap-4 items-center justify-end pb-5">
-              <div className="text-white text-end">
+            <div className="flex flex-col gap-4 items-center justify-center md:justify-end pb-5">
+              <div className="text-white md:text-end">
                 <h1 className="font-bold text-5xl">One more friend</h1>
                 <h4 className="font-bold text-3xl">Thousands more fun!</h4>
               </div>
-              <div className="w-1/2">
-                <p className="text-[15px] text-end text-white">
+              <div className="md:w-1/2">
+                <p className="text-[15px] md:text-end text-white">
                   Having a pet means you have more joy, a new friend, a happy
                   person who will always be with you to have fun. We have 200+
                   different pets that can meet your needs!
