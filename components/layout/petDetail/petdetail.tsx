@@ -9,12 +9,12 @@ export default function PetDetail({ pet }: PetDetailProps) {
   return (
     <div className="flex justify-center">
 
-      <div className="p-3 flex gap-4">
-        <div className="w-1/4">
+      <div className="p-3 flex md:flex-row flex-col gap-4">
+        <div className="md:w-1/4">
             <PetCarousel pet={pet} />
             <PetThumbnails />
         </div>
-        <div className="mt-6 w-3/4">
+        <div className="mt-6 md:w-3/4">
             <PetInfo pet={pet} />
         </div>
       </div>

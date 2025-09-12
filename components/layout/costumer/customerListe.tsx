@@ -6,7 +6,7 @@ import CustomerCard from "./customerCard";
 const CustomerList: React.FC = () => {
   return (
     <section className="flex justify-center items-center mt-10">
-      <div className="w-[90%]">
+      <div className="md:w-[90%] w-[98%]">
         <p className="font-bold text-xl mb-4">Our lovely customers</p>
         <Carousel
           autoplay={{dotDuration : true}}

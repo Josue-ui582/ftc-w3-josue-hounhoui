@@ -35,13 +35,13 @@ export default function Sponsor() {
 
   return (
     <section className="flex justify-center items-center mt-10">
-      <div className="w-[90%]">
+      <div className="w-[90%] flex flex-col gap-4">
         <div className="flex justify-between items-center mb-5">
           <div>
             <h5 className="text-black text-[14px]">Proud to be part of</h5>
             <span className="text-2xl text-[#003459] font-bold"> Pets Sellers</span>
           </div>
-          <div>
+          <div className="sm:block hidden">
             <Button variant="default" size="md">
               View all our services <IoPlayCircleOutline />
             </Button>
@@ -59,6 +59,11 @@ export default function Sponsor() {
               />
             ))}
           </div>
+        </div>
+        <div className="sm:hidden block w-full">
+            <Button variant="default" size="md" className="w-full">
+              View all our services <IoPlayCircleOutline />
+            </Button>
         </div>
       </div>
     </section>
