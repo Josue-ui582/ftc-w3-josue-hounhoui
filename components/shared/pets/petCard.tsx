@@ -25,17 +25,18 @@ import Link from "next/link";
 
 
 export default function PetCard({ pet }: { pet: Pet }) {
-  const { selected } = useCurrency(); // ✅ On récupère uniquement la devise choisie
+  const { selected, rates } = useCurrency(); // ✅ On récupère uniquement la devise choisie
 
-  // Sécurise les conversions (rate par défaut = 1, code par défaut = "USD")
-  const rate = Number(selected?.code);
   const priceNumber = Number(pet.price);
+
+  // si pas de taux => on reste en VND
+  const rate = rates[selected.code] ?? 1;
+
   const converted = priceNumber * rate;
 
   const convertedPrice = converted.toLocaleString(undefined, {
     style: "currency",
     currency: selected?.code ?? "VND",
-    currencyDisplay: "code"
   });
 
   return (

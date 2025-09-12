@@ -13,10 +13,8 @@ import { HeroSectionProps } from "@/types/heroSection";
  */
 const HeroSection: React.FC<HeroSectionProps> = ({ children }) => {
   return (
-    <div className="hero-section">
-      <div className="hero-content">
-        {children}
-      </div>
+    <div className="h-screen w-full flex justify-center items-center bg-[#fff7e9] overflow-hidden ">
+      {children}
     </div>
   );
 };

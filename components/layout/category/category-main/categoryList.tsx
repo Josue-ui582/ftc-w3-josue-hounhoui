@@ -101,7 +101,7 @@ export default function CategoryListe({ categorys, filters, onFilterChange }: Ca
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {currentCategory.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}

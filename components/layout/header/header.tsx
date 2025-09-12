@@ -27,8 +27,8 @@ import { IoPlayCircleOutline } from "react-icons/io5";
  */
 export default function Header() {
   return (
-    <header className="flex justify-center center">
-      <div className="flex lg:flex-row flex-col gap-24 md:gap-5 lg:gap-6 justify-between md:items-start md:w-[90%] w-[98%] items-end lg:items-center">
+    <header className="flex justify-center center overflow-hidden">
+      <div className="flex lg:flex-row flex-col gap-24 md:gap-5 lg:gap-6 justify-between md:items-start items-end lg:items-center">
 
         <div className="flex flex-col gap-4">
           <div className="text-[#003459] relative">
@@ -60,7 +60,7 @@ export default function Header() {
           <Image 
             src={goodWoman} 
             alt="Good humored woman"
-            className="relative z-10"
+            className="relative z-10 "
           />
         </div>
       </div>

@@ -60,10 +60,16 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   // Charger les taux depuis l’API au montage
   useEffect(() => {
-    fetchRates("VND").then((fetchedRates) => {
-      setRates(fetchedRates);
-    });
-  }, []);
+    fetchRates(selected.code === "VND" ? "EUR" : selected.code)
+      .then((fetchedRates) => {
+        setRates(fetchedRates);
+      })
+      .catch((err) => {
+        console.error(err);
+        setRates({ USD: 1, EUR: 1, VND: 27000 }); // fallback
+      });
+  }, [selected]);
+
 
   return (
     <CurrencyContext.Provider value={{ selected, setSelected, rates }}>
