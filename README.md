@@ -24,7 +24,7 @@ DogShop est une application web moderne permettant d’acheter des chiens et des
 
 ### 🏠 Page d’accueil
 
-![Accueil](./public/ahome.png)
+![Page d'accueil](public/ahome.png)
 
 ## ⚙️ Installation et utilisation
 
