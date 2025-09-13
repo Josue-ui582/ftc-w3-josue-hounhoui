@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐶 Monito Pets – Site de vente de chiens et produits pour chiens
 
-## Getting Started
+DogShop est une application web moderne permettant d’acheter des chiens et des produits pour chiens en ligne. Construit avec Next.js, TypeScript, Tailwind CSS et Ant Design, ce projet allie performance, accessibilité et design élégant.
 
-First, run the development server:
+## 🚀 Fonctionnalités principales
+
+- 🐕 Liste des chiens disponibles à la vente
+
+- 🎨 Interface utilisateur moderne avec Ant Design + Tailwind CSS
+
+- 🔍 Recherche et filtres par race, prix, etc.
+
+- 📱 Design responsive et optimisé mobile
+
+- 🖼️ Galerie photos des chiens et accessoires
+
+## 🛠️ Stack technique
+
+- Framework : Next.js
+- Langage : TypeScript
+- UI/UX : Tailwind CSS + Ant Design
+
+## 📸 Aperçu du projet
+
+### 🏠 Page d’accueil
+
+(./public/ahome.png)
+
+## ⚙️ Installation et utilisation
+
+Use the node package manager npm to install Monito Pets.
+
+### 1️⃣ Cloner le projet
+
+```bash
+git@github.com:Josue-ui582/ftc-w3-josue-hounhoui.git
+cd monito-pets
+
+```
+
+### 2️⃣ Installer les dépendances
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+### 3️⃣ Lancer le serveur de développement
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+👉 Le projet sera disponible sur http://localhost:3000
+
+## Usage
+
+```python
+import foobar
+
+# returns 'words'
+foobar.pluralize('word')
+
+# returns 'geese'
+foobar.pluralize('goose')
+
+# returns 'phenomenon'
+foobar.singularize('phenomena')
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 Contribution
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Les contributions sont les bienvenues !
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Forker le projet
 
-## Learn More
+2. Créer une branche (git checkout -b feature/ma-fonctionnalite)
 
-To learn more about Next.js, take a look at the following resources:
+3. Commit (git commit -m 'Ajout nouvelle fonctionnalité')
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Push (git push origin feature/ma-fonctionnalite)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Créer une Pull Request
 
-## Deploy on Vercel
+## 📜 Licence
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ce projet est sous licence MIT – libre à vous de l’utiliser et de le modifier.
