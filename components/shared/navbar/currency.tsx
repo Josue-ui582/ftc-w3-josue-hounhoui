@@ -62,13 +62,13 @@ export default function CurrencySelector() {
         className="flex items-center gap-2 px-1 py-1 cursor-pointer rounded-md hover:bg-gray-100"
       >
         <Image
-          src={selected.flag}
+          src="https://flagcdn.com/w20/vn.png"
           alt={selected.code}
           width={20}
           height={20}
           className="rounded-full object-cover"
         />
-        <span className="font-medium">{selected.code}</span>
+        <span className="font-medium text-gray-800">{selected.code}</span>
         <LuChevronDown />
       </button>
 

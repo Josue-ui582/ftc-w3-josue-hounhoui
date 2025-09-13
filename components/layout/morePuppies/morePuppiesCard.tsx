@@ -65,7 +65,7 @@ export default function MorePuppiesCard ({puppie} : {puppie : MorePuppie}) {
                 <p className="text-sm text-gray-600">
                     Gender: {puppie.gender} • Age: {puppie.age}
                 </p>
-                <p className="font-bold mt-2">{puppie.price}</p>
+                <p className="font-bold mt-2">{puppie.price.toLocaleString()} VND</p>
             </div>
         </div>
     )

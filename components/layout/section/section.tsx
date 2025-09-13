@@ -34,7 +34,7 @@ export function Section() {
             who will always be with you to have fun. We have 200+ different pets
             that can meet your needs!
           </p>
-          <div className="flex gap-4 relative z-10 mt-4">
+          <div className="flex gap-2 md:gap-4 relative z-10 mt-4">
             <Button variant="default" size="md">
               View Intro <IoPlayCircleOutline />
             </Button>
