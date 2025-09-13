@@ -81,12 +81,12 @@ export default function PetInfo({ pet }: PetCarouselProps) {
           </div>
         ))}
       </div>
-      <div className="sm:hidden flex flex-col justify-center items-center gap-2 p-2 rounded-lg ">
-        <div className="flex gap-1 justify-center items-center text-[10px] text-[#003459] font-semibold bg-[#fff7e9]">
+      <div className="sm:hidden flex flex-col justify-center items-center gap-2 p-2 rounded-lg w-full">
+        <div className="flex gap-1 justify-center items-center text-[10px] text-[#003459] font-semibold bg-[#fff7e9] w-full p-2 rounded-lg">
           <Image src="/Frame 110.png" width={30} height={30} alt="frame" />
           <p>100% health guarantes for pets</p>
         </div>
-        <div className="flex gap-1 justify-center items-center text-[10px] text-[#003459] font-semibold bg-[#fff7e9]">
+        <div className="flex gap-1 justify-center items-center text-[10px] text-[#003459] font-semibold bg-[#fff7e9] w-full p-2 rounded-lg">
           <Image src="/Group.png" width={30} height={30} alt="frame" />
           <p>100% guarantes of pet identification</p>
         </div>
